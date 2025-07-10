@@ -2,21 +2,6 @@
 
 Java uygulamalarının ilişkisel veritabanları ile nasıl iletişim kurduğunu anlamak için oluşturulan bir projedir.  
 JDBC sayesinde veritabanına bağlanma, veri çekme, ekleme gibi işlemler Java ile doğrudan gerçekleştirilebilir.
-
-## 🛠️ Kullanılan Teknolojiler
-
-- Java 21  
-- PostgreSQL  
-- JDBC (Java Database Connectivity)  
-- IntelliJ IDEA
-
----
-
-## ❓ JDBC Nedir?
-
-**JDBC (Java Database Connectivity)**, Java uygulamaları ile veritabanları arasında bağlantı kurmayı sağlayan bir API'dir.  
-Yani Java koduyla örneğin bir PostgreSQL, MySQL veya Oracle veritabanına erişmeni, veri çekmeni, eklemeni sağlar.
-
 Java'nın veritabanı ile konuşma dilidir diyebiliriz.
 
 ---
