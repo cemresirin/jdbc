@@ -27,7 +27,7 @@ public class Main {
         }
  */
 
-
+/*
         String insertSql = "INSERT INTO users (name,email) VALUES(?,?)";
 
         try (Connection connection = DatabaseConnectorConfig.getConnection();
@@ -40,7 +40,9 @@ public class Main {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+*/
 
+/*
         String selectsql = " SELECT * FROM users";
 
         try {
@@ -59,4 +61,35 @@ public class Main {
                 throw new RuntimeException(e);
             }
         }
+*/
+
+/*
+        //update
+         String updateSql = "UPDATE users SET name = ? , email = ? WHERE id = ?";
+
+         try {
+             Connection connection =DatabaseConnectorConfig.getConnection();
+              PreparedStatement preparedStatement =connection.prepareStatement(updateSql);
+              preparedStatement.setString(1, "Ceylin");
+              preparedStatement.setString(2, "ceylin@gmail.com");
+              preparedStatement.setInt(3,1);
+              preparedStatement.executeUpdate();
+         }catch(SQLException e){
+             throw new RuntimeException(e);
+         }
     }
+*/
+
+        //delete
+        String deleteSql = "DELETE FROM users WHERE id = ?";
+
+        try{
+            Connection connection=DatabaseConnectorConfig.getConnection();
+            PreparedStatement preparedStatement =connection.prepareStatement(deleteSql);
+            preparedStatement.setInt(1,3);
+            preparedStatement.executeUpdate();
+        }catch(SQLException e)  {
+            throw new RuntimeException(e);
+        }
+    }
+}
