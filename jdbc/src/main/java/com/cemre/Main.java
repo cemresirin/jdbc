@@ -1,8 +1,12 @@
 package com.cemre;
 
+import com.cemre.User.User;
 import com.cemre.config.DatabaseConnectorConfig;
+import com.cemre.dao.UserDAO;
+import com.cemre.dao.UserDAOImpl;
 
 import java.sql.*;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -79,7 +83,7 @@ public class Main {
          }
     }
 */
-
+/*
         //delete
         String deleteSql = "DELETE FROM users WHERE id = ?";
 
@@ -90,6 +94,44 @@ public class Main {
             preparedStatement.executeUpdate();
         }catch(SQLException e)  {
             throw new RuntimeException(e);
+        }
+    }
+*/
+
+        try{
+            DatabaseConnectorConfig.setConnection();
+            Connection connection= DatabaseConnectorConfig.getConnection();
+
+            UserDAO userDAO =new UserDAOImpl(connection);
+        //  userDAO.createTable()
+
+            //Kullanıcı oluşturma
+
+        //  User user=new User(1,"Cemre",26);
+        //  userDAO.save(user);
+
+            //Kullanıcı listeleme
+        //  List<User>users =userDAO.findAll();
+        //  for(User user :users) {
+        //      System.out.println(user.getId() +",İsim:"+user.getName()+",Yaş:"+ user.getAge());
+
+
+            //Kullanıcı güncelleme
+
+            User updateUser =new User();
+        //  updateUser.setId(1);
+        //  updateUser.setName("Cemre");
+        //  updateUser.setage(30);
+        //  userDAO.update(updateUser);
+
+
+            //Kullanıcı silme
+            //  userDAO.delete(2)
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            DatabaseConnectorConfig.closeConnection();
         }
     }
 }
